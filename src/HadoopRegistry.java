@@ -70,7 +70,7 @@ public class HadoopRegistry {
                     while ((line = reader.readLine()) != null) {
                         if (!line.isBlank()) {
                             String[] record = line.split(",");
-                            users.add(record[0]); // Add the username (index 0) to our array list
+                            users.add(record[0]);
                         }
                     }
                 }
@@ -110,6 +110,7 @@ public class HadoopRegistry {
             System.err.println("Failed to remove registry file: " + e.getMessage());
         }
     }
+
     public static String lookupUser(String username) {
         try {
             FileSystem fs = getFileSystem();
